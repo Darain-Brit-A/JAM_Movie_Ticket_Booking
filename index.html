@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>J A M Movie Ticket Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+          background: linear-gradient(120deg,#4557e9 0%, #e445e9 100%);
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          color: #fff;
+          min-height: 100vh;
+          margin: 0;
+        }
+        .container {
+          background: rgba(30,30,45,0.94);
+          border-radius: 15px;
+          box-shadow: 0 4px 16px rgba(20,20,90,0.25);
+          max-width: 400px;
+          margin: 50px auto 0 auto;
+          padding: 36px 24px;
+        }
+        h2 {
+          letter-spacing: 1px;
+          margin-bottom: 16px;
+        }
+        label {
+          display: block;
+          margin-top: 12px;
+          font-weight: 500;
+        }
+        select, input[type="number"] {
+          width: 100%;
+          padding: 8px 6px;
+          margin-top: 4px;
+          border-radius: 7px;
+          border: none;
+          font-size: 1em;
+          background: #f2f2ff;
+          color: #333;
+        }
+        .btn {
+          background: #ff3fa6;
+          color: #fff;
+          padding: 12px;
+          border: none;
+          border-radius: 9px;
+          margin-top: 22px;
+          width: 100%;
+          font-size: 1.04em;
+          cursor: pointer;
+          font-weight: bold;
+          box-shadow: 0 2px 7px #ce4ef6c0;
+          transition: background 0.22s;
+        }
+        .btn:hover { background: #e33692; }
+        .card { background: #fff9; color: #222; border-radius: 8px; padding: 18px 12px; margin-top: 18px; }
+        .note { color: #ffd98a; font-size: 0.95em; margin-top: 10px; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+ <div class="container">
+   <h2>🎬 J A M Movie Tickets</h2>
+   <form id="bookingForm">
+     <label>Choose Movie:</label>
+     <select id="movieName" required>
+       <option disabled selected value="">-- Select movie --</option>
+       <option>Avengers Endgame</option>
+       <option>Avengers Infinity War</option>
+       <option>Avengers: Age of Ultron</option>
+       <option>The Avengers</option>
+       <option>Thor: Ragnarok</option>
+     </select>
+     <label>Show Time:</label>
+     <select id="showTime" required>
+       <option disabled selected value="">-- Select show time --</option>
+       <option>Monday 9:00 AM</option>
+       <option>Wednesday 12:00 PM</option>
+       <option>Sunday 6:00 PM</option>
+     </select>
+     <label>Tickets (Available: <span id="available">100</span>):</label>
+     <input type="number" id="tickets" min="1" max="10" value="1" required>
+     <label>Payment Method:</label>
+     <select id="payMethod" required>
+       <option>UPI</option>
+       <option>Credit/Debit Card</option>
+       <option>Net Banking</option>
+     </select>
+     <button type="submit" class="btn">Book Ticket</button>
+   </form>
+   <div id="resultCard" class="card hidden"></div>
+   <div class="note">
+     <strong>Cost:</strong> ₹100 per ticket. Secure payment. No hidden charges.
+   </div>
+ </div>
+ <script>
+   let availableTickets = 100;
+   const bookingForm = document.getElementById('bookingForm');
+   const availableSpan = document.getElementById('available');
+   const resultCard = document.getElementById('resultCard');
+   bookingForm.onsubmit = ev => {
+     ev.preventDefault();
+     resultCard.classList.add('hidden');
+     const movie = document.getElementById('movieName').value;
+     const time = document.getElementById('showTime').value;
+     const tickets = parseInt(document.getElementById('tickets').value, 10);
+     const pay = document.getElementById('payMethod').value;
+     if (tickets > availableTickets) {
+       resultCard.textContent = "Not enough tickets! Only " + availableTickets + " left.";
+       resultCard.classList.remove('hidden');
+       return;
+     }
+     let total = tickets * 100;
+     availableTickets -= tickets;
+     availableSpan.textContent = availableTickets;
+     resultCard.innerHTML = `
+       <b>Booking Confirmed!</b> <br>
+       Movie: <strong>${movie}</strong><br>
+       Time: <strong>${time}</strong><br>
+       Tickets: <strong>${tickets}</strong><br>
+       Payment via: <strong>${pay}</strong><br>
+       <b>Total Paid:</b> ₹${total}
+     `;
+     resultCard.classList.remove('hidden');
+     bookingForm.reset();
+   };
+ </script>
+</body>
+</html>
