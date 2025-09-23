@@ -22,15 +22,13 @@ It may not be perfect, but we created it while we were just introduced to C. Aft
 
 📊 Dynamic Ticket Availability: Automatically updates available tickets after booking or cancellation.
 
-# 👨‍💻 Authors
+# 👥 Contributors
 
-@Darain Brit A
+This project was collaboratively developed by:
 
-@Darren Samuel Dcruz
-
-@Abel Alexander
-
-@Joel Jacob Roji
+* [Darain Brit A](https://github.com/Darain-Brit-A)
+* [Darren Samuel D'cruz](https://github.com/Darren-Dcruz)
+* [Joel Jacob Roji](https://github.com/JoelJacobRoji)
 
 # Visit our site: 
 
