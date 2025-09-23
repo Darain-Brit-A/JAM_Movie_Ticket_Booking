@@ -13,9 +13,13 @@ It may not be perfect, but we created it while we were just introduced to C. Aft
 # ✨ Features
 
 🎟 Book Tickets: Choose from a list of movies and show timings, and book the desired number of tickets.
+
 ❌ Cancel Tickets: Cancel previously booked tickets and get a refund.
+
 👀 View Tickets: View details of booked tickets including movie name, timing, and number of tickets.
+
 💳 Payment Options: Supports payment through UPI, Credit/Debit Card, and Net Banking.
+
 📊 Dynamic Ticket Availability: Automatically updates available tickets after booking or cancellation.
 
 # 👨‍💻 Authors
