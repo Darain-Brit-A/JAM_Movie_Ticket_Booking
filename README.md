@@ -24,10 +24,13 @@ It may not be perfect, but we created it while we were just introduced to C. Aft
 
 # 👨‍💻 Authors
 
-Darain Brit A
-Darren Samuel Dcruz
-Abel Alexander
-Joel Jacob Roji
+@Darain Brit A
+
+@Darren Samuel Dcruz
+
+@Abel Alexander
+
+@Joel Jacob Roji
 
 # Visit our site: 
 
