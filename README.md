@@ -28,6 +28,7 @@ This project was collaboratively developed by:
 
 * [Darain Brit A](https://github.com/Darain-Brit-A)
 * [Darren Samuel D'cruz](https://github.com/Darren-Dcruz)
+* [Abel Alexander](https://github.com/abelalexander18)
 * [Joel Jacob Roji](https://github.com/JoelJacobRoji)
 
 # Visit our site: 
